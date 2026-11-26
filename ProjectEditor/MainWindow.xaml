@@ -6,18 +6,24 @@
     WindowStartupLocation="CenterScreen">
     <Grid x:Name="canvasRoot" ShowGridLines="True">     <!--Grid Part (This name is a workaround for a bug.)-->
         <Grid.RowDefinitions>                           <!--Row Definition-->
-             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>                          <!--Column Definition-->
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200"/>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="*"/>
+            <RowDefinition Height="Auto"/>              <!--Row 0-->
+            <RowDefinition Height="*"/>                 <!--Row 1-->
+            <RowDefinition Height="Auto"/>              <!--Row 2-->
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>                        <!--Column Definition-->
+            <ColumnDefinition Width="200"/>             <!--Column 0-->
+            <ColumnDefinition Width="Auto"/>            <!--Column 1-->
+            <ColumnDefinition Width="*"/>               <!--Column 2-->
         </Grid.ColumnDefinitions>
 
         <!--For Test-->
-        <Border Grid.Row="0" Grid.ColumnSpan="3" Background="#FFE0E0"/>
+        <Border Grid.Row="0" Grid.ColumnSpan="3" Background="#F3F3F3" Padding="8,6">    <!--Padding: 8px left and right, 6px top and bottom-->
+            <StackPanel Orientation="Horizontal">
+                <Button Content="打开" Padding="12,4" Margin="0,0,6,0"/>                <!--Padding: inside; Margin: outside-->
+                <Button Content="保存" Padding="12,4" Margin="0,0,12,0"/>
+                <TextBlock Text="未命名.txt" VerticalAlignment="Center" Foreground="#666666"/>
+            </StackPanel>
+        </Border>
         <Border Grid.Row="1" Grid.Column="0" Background="#E0FFE0"/>
         <Border Grid.Row="1" Grid.Column="2" Background="#E0E0FF"/>
         <Border Grid.Row="2" Grid.ColumnSpan="3" Background="#F0F0F0"/>
