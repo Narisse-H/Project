@@ -16,7 +16,8 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Border Grid.Row="0" Grid.ColumnSpan="3" Background="#FFE0E0"/>     <!--For Test-->
+        <!--For Test-->
+        <Border Grid.Row="0" Grid.ColumnSpan="3" Background="#FFE0E0"/>
         <Border Grid.Row="1" Grid.Column="0" Background="#E0FFE0"/>
         <Border Grid.Row="1" Grid.Column="2" Background="#E0E0FF"/>
         <Border Grid.Row="2" Grid.ColumnSpan="3" Background="#F0F0F0"/>
