@@ -4,16 +4,21 @@
     Title="ProjectEditor" Width="1000" Height="650"
     MinWidth="600" MinHeight="400"
     WindowStartupLocation="CenterScreen">
-    <Grid x:Name="canvasRoot" ShowGridLines="True">
-        <Grid.RowDefinitions>
+    <Grid x:Name="canvasRoot" ShowGridLines="True">     <!--Grid Part (This name is a workaround for a bug.)-->
+        <Grid.RowDefinitions>                           <!--Row Definition-->
              <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
+        </Grid.RowDefinitions>                          <!--Column Definition-->
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
+
+        <Border Grid.Row="0" Grid.ColumnSpan="3" Background="#FFE0E0"/>     <!--For Test-->
+        <Border Grid.Row="1" Grid.Column="0" Background="#E0FFE0"/>
+        <Border Grid.Row="1" Grid.Column="2" Background="#E0E0FF"/>
+        <Border Grid.Row="2" Grid.ColumnSpan="3" Background="#F0F0F0"/>
     </Grid>
 </Window>
