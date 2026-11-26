@@ -4,6 +4,13 @@
     Title="ProjectEditor" Width="1000" Height="650"
     MinWidth="600" MinHeight="400"
     WindowStartupLocation="CenterScreen">
+
+    <!--
+    Need to change:
+        Window Size: 1000 * 650 (Minimum Size: 600 * 400)
+        Start up location: CenterScreen
+    -->
+
     <Grid x:Name="canvasRoot" ShowGridLines="True">     <!--Grid Part (This name is a workaround for a bug.)-->
         <Grid.RowDefinitions>                           <!--Row Definition-->
             <RowDefinition Height="Auto"/>              <!--Row 0-->
