@@ -30,22 +30,17 @@ public partial class MainWindow : Window
             Title  = "打开文件",
             Filter = "代码/文本文件|*.txt;*.cs;*.xaml;*.md;*.json|所有文件|*.*"
         };
-        // Filter 格式：显示名|通配符|显示名|通配符，竖线是分隔符
 
-        // ── 2. 用户点了取消就直接返回 ──
         if (dialog.ShowDialog() != true)
             return;
 
-        // ── 3. 读文件并显示 ──
         try
         {
-            EditorBox.Text    = File.ReadAllText(dialog.FileName);   // 内容 → 编辑区
-            FileNameText.Text = Path.GetFileName(dialog.FileName);   // 顶栏只显示文件名，不显示完整路径
+            EditorBox.Text    = File.ReadAllText(dialog.FileName);   //EditorBox: from .xaml
+            FileNameText.Text = Path.GetFileName(dialog.FileName);   //FileNameText: from .xaml
         }
         catch (Exception ex)
         {
-            // 文件被占用、没权限、路径太长……都可能失败。
-            // 不 catch 的话异常会往上抛，程序直接崩掉。
             MessageBox.Show($"打不开这个文件：{ex.Message}",
                             "错误", MessageBoxButton.OK, MessageBoxImage.Error);
         }
