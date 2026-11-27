@@ -28,22 +28,23 @@ public partial class MainWindow : Window
         var dialog = new OpenFileDialog
         {
             Title  = "打开文件",
-            Filter = "代码/文本文件|*.txt;*.cs;*.xaml;*.md;*.json|所有文件|*.*"
+            Filter = "代码/文本文件|*.txt;*.cs;*.xaml;*.md;*.json;*.lua;*.c"
         };
 
-        if (dialog.ShowDialog() != true)
-            return;
+        if (dialog.ShowDialog() == true)
+        {
+            try
+            {
+                EditorBox.Text    = File.ReadAllText(dialog.FileName);   //EditorBox: from .xaml
+                FileNameText.Text = Path.GetFileName(dialog.FileName);   //FileNameText: from .xaml
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"打不开这个文件：{ex.Message}",
+                                "错误", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
 
-        try
-        {
-            EditorBox.Text    = File.ReadAllText(dialog.FileName);   //EditorBox: from .xaml
-            FileNameText.Text = Path.GetFileName(dialog.FileName);   //FileNameText: from .xaml
-        }
-        catch (Exception ex)
-        {
-            MessageBox.Show($"打不开这个文件：{ex.Message}",
-                            "错误", MessageBoxButton.OK, MessageBoxImage.Error);
-        }
         //MessageBox.Show("按钮接通了(OnOpenClick)!");
     }
 
