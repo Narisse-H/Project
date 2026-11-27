@@ -15,7 +15,7 @@
     -->
 
     <Grid x:Name="canvasRoot"
-            ShowGridLines="True">
+        ShowGridLines="True">
         <!--Grid Part (This name is a workaround for a bug.)-->
 
         <!--Row Definition-->
@@ -59,21 +59,19 @@
         <TextBox x:Name="EditorBox"
                 Grid.Row="1"
                 Grid.Column="2"
-                 AcceptsReturn="True"
+                AcceptsReturn="True"
                 AcceptsTab="True"
                 TextWrapping="NoWrap"
-                 FontFamily="Consolas"
+                FontFamily="Consolas"
                 FontSize="14"
                 Padding="8"
-                 BorderThickness="0"
-                 VerticalScrollBarVisibility="Auto"
-                 HorizontalScrollBarVisibility="Auto"
-                 SpellCheck.IsEnabled="False"/>
-        <Border Grid.Row="1"
-                Grid.Column="2"
-                Background="#E0E0FF"/>
+                BorderThickness="0"
+                VerticalScrollBarVisibility="Auto"
+                HorizontalScrollBarVisibility="Auto"
+                SpellCheck.IsEnabled="False"/>
+        
         <Border Grid.Row="2"
                 Grid.ColumnSpan="3"
-                Background="#F0F0F0"/>
+                Background="Red"/>
     </Grid>
 </Window>
