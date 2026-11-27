@@ -74,7 +74,7 @@
             <StackPanel Orientation="Horizontal">
 
                 <TextBlock x:Name="FilePathText"
-                           Text="未命名.txt"
+                           Text="无"
                            VerticalAlignment="Center"
                            Foreground="#666666"/>
 
@@ -117,25 +117,28 @@
             </Grid.RowDefinitions>
 
             <ScrollViewer x:Name="ChatScrollViewer"
-                          Grid.Row="0">
+                          Grid.Row="0"
+                          VerticalScrollBarVisibility="Auto"
+                          HorizontalScrollBarVisibility="Disabled"
+                          Padding="8">
 
                 <TextBlock x:Name="ChatContentText"
-                           Text="ChatContentText"
-                           VerticalAlignment="Center"
+                           Text="None"
+                           TextWrapping="Wrap"
                            Foreground="#666666"/>
 
             </ScrollViewer>
 
             <Grid Grid.Row="1">
 
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
 
                 <TextBox x:Name="InputBox"
-                         Grid.Row="0"
-                         AcceptsReturn="True"
+                         Grid.Column="0"
+                         AcceptsReturn="False"
                          AcceptsTab="True"
                          TextWrapping="wrap"
                          FontFamily="Consolas"
@@ -147,10 +150,11 @@
                          SpellCheck.IsEnabled="False"/>
 
                 <Button x:Name="SendButton"
-                        Grid.Row="1"
+                        Grid.Column="1"
                         Content="发送"
-                        Padding="12,4"
-                        Margin="6,6"
+                        Padding="6,4"
+                        Margin="3,3"
+                        IsDefault="True"
                         Click="OnSendClick"/>
 
             </Grid>
