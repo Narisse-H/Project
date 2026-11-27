@@ -24,7 +24,8 @@ public partial class MainWindow : Window
     }
 
     //Script Part
-    string file_path = string.Empty;
+    private string file_path = string.Empty;
+    private string api_key = string.Empty;
     private void OnOpenClick(object sender, RoutedEventArgs e)
     {
         var dialog = new OpenFileDialog

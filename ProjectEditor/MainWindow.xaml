@@ -15,10 +15,10 @@
     -->
 
     <Grid x:Name="canvasRoot"
-          ShowGridLines="True">
+          ShowGridLines="False">
         <!--Grid Part (This name is a workaround for a bug.)-->
 
-        <!--Row Definition-->
+        <!--Row/Column Definition-->
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <!--Row 0-->
@@ -27,8 +27,6 @@
             <RowDefinition Height="Auto"/>
             <!--Row 2-->
         </Grid.RowDefinitions>
-
-        <!--Column Definition-->
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
             <!--Column 0-->
@@ -59,7 +57,7 @@
                         Padding="12,4"
                         Margin="0,0,12,0"
                         Click="OnSaveClick"/>
-                
+
                 <TextBlock x:Name="FileNameText"
                            Text="未命名.txt"
                            VerticalAlignment="Center"
@@ -97,6 +95,13 @@
                  VerticalScrollBarVisibility="Auto"
                  HorizontalScrollBarVisibility="Auto"
                  SpellCheck.IsEnabled="False"/>
+
+        <GridSplitter Grid.Row="1"
+                      Grid.Column="1"
+                      Width="4"
+                      HorizontalAlignment="Stretch"
+                      VerticalAlignment="Stretch"
+                      Background="#E0E0E0"/>
 
     </Grid>
 </Window>
