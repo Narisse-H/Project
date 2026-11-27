@@ -39,8 +39,8 @@ public partial class MainWindow : Window
             {
                 EditorBox.Text = File.ReadAllText(dialog.FileName);   //EditorBox: from .xaml
                 FileNameText.Text = Path.GetFileName(dialog.FileName);   //FileNameText: from .xaml
+                FilePathText.Text = dialog.FileName;   //FilePathText: from .xaml
                 file_path = dialog.FileName;
-                FilePathText.Text = file_path;   //FilePathText: from .xaml
             }
             catch (Exception ex)
             {
@@ -54,6 +54,42 @@ public partial class MainWindow : Window
 
     private void OnSaveClick(object sender, RoutedEventArgs e)
     {
+        if (file_path == string.Empty)
+        {
+            var dialog = new SaveFileDialog
+            {
+                Title = "保存文件",
+                Filter = "代码/文本文件|*.c;*.cpp;*.cs;*.java;*.py;*.lua;*.json;*.txt",
+            };
+
+            if (dialog.ShowDialog() == true)
+            {
+                try
+                {
+                    File.WriteAllText(dialog.FileName, EditorBox.Text);
+                    FileNameText.Text = Path.GetFileName(dialog.FileName);
+                    FilePathText.Text = dialog.FileName;
+                    file_path = dialog.FileName;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"无法保存文件：{ex.Message}",
+                                    "错误", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+        }
+        else
+        {
+            try
+            {
+                File.WriteAllText(file_path, EditorBox.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"无法保存文件：{ex.Message}",
+                                "错误", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
         //MessageBox.Show("按钮接通了(OnSaveClick)!");
     }
 }
