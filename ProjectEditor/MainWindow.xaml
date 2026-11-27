@@ -36,7 +36,7 @@
             <!--Column 2-->
         </Grid.ColumnDefinitions>
 
-        <!--For Test-->
+        <!--Information Show & Button-->
         <Border Grid.Row="0"
                 Grid.ColumnSpan="1"
                 Background="#F3F3F3"
@@ -82,6 +82,7 @@
 
         </Border>
 
+        <!--Input Area-->
         <TextBox x:Name="EditorBox"
                  Grid.Row="1"
                  Grid.Column="2"
@@ -96,12 +97,26 @@
                  HorizontalScrollBarVisibility="Auto"
                  SpellCheck.IsEnabled="False"/>
 
+        <!--Splitter Line-->
         <GridSplitter Grid.Row="1"
                       Grid.Column="1"
                       Width="4"
                       HorizontalAlignment="Stretch"
                       VerticalAlignment="Stretch"
                       Background="#E0E0E0"/>
+
+        <!--Chat Area-->
+        <Grid Grid.Row="1"
+              Grid.Column="0"
+              ShowGridLines="True">
+
+            <!--Row/Column Definition-->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+        </Grid>
 
     </Grid>
 </Window>
