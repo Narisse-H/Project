@@ -96,6 +96,17 @@ public partial class MainWindow : Window
 
     private void OnSendClick(object sender, RoutedEventArgs e)
     {
-        MessageBox.Show("按钮接通了(OnSendClick)!");
+        var input = InputBox.Text.Trim();
+        if (ChatContentText.Text == "None")
+        {
+            ChatContentText.Text = string.Empty;
+        }
+        if (input.Length != 0)
+        {
+            ChatContentText.Text += $"你：{input}{Environment.NewLine}";
+            InputBox.Clear();
+            ChatScrollViewer.ScrollToEnd();
+        }
+        //MessageBox.Show("按钮接通了(OnSendClick)!");
     }
 }
