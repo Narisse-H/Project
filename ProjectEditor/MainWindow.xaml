@@ -116,6 +116,45 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
+            <ScrollViewer x:Name="ChatScrollViewer"
+                          Grid.Row="0">
+
+                <TextBlock x:Name="ChatContentText"
+                           Text="ChatContentText"
+                           VerticalAlignment="Center"
+                           Foreground="#666666"/>
+
+            </ScrollViewer>
+
+            <Grid Grid.Row="1">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <TextBox x:Name="InputBox"
+                         Grid.Row="0"
+                         AcceptsReturn="True"
+                         AcceptsTab="True"
+                         TextWrapping="wrap"
+                         FontFamily="Consolas"
+                         FontSize="14"
+                         Padding="8"
+                         BorderThickness="0"
+                         VerticalScrollBarVisibility="Auto"
+                         HorizontalScrollBarVisibility="Auto"
+                         SpellCheck.IsEnabled="False"/>
+
+                <Button x:Name="SendButton"
+                        Grid.Row="1"
+                        Content="发送"
+                        Padding="12,4"
+                        Margin="6,6"
+                        Click="OnSendClick"/>
+
+            </Grid>
+
         </Grid>
 
     </Grid>

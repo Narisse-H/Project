@@ -93,4 +93,9 @@ public partial class MainWindow : Window
         }
         //MessageBox.Show("按钮接通了(OnSaveClick)!");
     }
+
+    private void OnSendClick(object sender, RoutedEventArgs e)
+    {
+        MessageBox.Show("按钮接通了(OnSendClick)!");
+    }
 }
