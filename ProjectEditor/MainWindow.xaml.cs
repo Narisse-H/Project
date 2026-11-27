@@ -23,20 +23,24 @@ public partial class MainWindow : Window
         InitializeComponent();
     }
 
+    //Script Part
+    string file_path = string.Empty;
     private void OnOpenClick(object sender, RoutedEventArgs e)
     {
         var dialog = new OpenFileDialog
         {
-            Title  = "打开文件",
-            Filter = "代码/文本文件|*.txt;*.cs;*.xaml;*.md;*.json;*.lua;*.c"
+            Title = "打开文件",
+            Filter = "代码/文本文件|*.c;*.cpp;*.cs;*.java;*.py;*.lua;*.json;*.txt",
         };
 
         if (dialog.ShowDialog() == true)
         {
             try
             {
-                EditorBox.Text    = File.ReadAllText(dialog.FileName);   //EditorBox: from .xaml
+                EditorBox.Text = File.ReadAllText(dialog.FileName);   //EditorBox: from .xaml
                 FileNameText.Text = Path.GetFileName(dialog.FileName);   //FileNameText: from .xaml
+                file_path = dialog.FileName;
+                FilePathText.Text = file_path;   //FilePathText: from .xaml
             }
             catch (Exception ex)
             {
@@ -50,6 +54,6 @@ public partial class MainWindow : Window
 
     private void OnSaveClick(object sender, RoutedEventArgs e)
     {
-        MessageBox.Show("按钮接通了(OnSaveClick)!");
+        //MessageBox.Show("按钮接通了(OnSaveClick)!");
     }
 }
