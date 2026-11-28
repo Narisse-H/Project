@@ -51,7 +51,7 @@
                         Margin="0,0,6,0"
                         Click="OnOpenClick"/>
                 <!--Padding: inside; Margin: outside-->
-                <!--Margin: Left Up Right Down-->
+                <!--Margin: Left Top Right Bottom-->
 
                 <Button Content="保存"
                         Padding="12,4"

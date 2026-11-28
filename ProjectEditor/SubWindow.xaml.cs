@@ -9,15 +9,20 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MyWpfApp;
+namespace ProjectEditor;
 
 /// <summary>
-/// Interaction logic for MainWindow.xaml
+/// Interaction logic for SubWindow.xaml
 /// </summary>
-public partial class MainWindow : Window
+public partial class SubWindow : Window
 {
-    public MainWindow()
+    public SubWindow()
     {
         InitializeComponent();
+    }
+
+    private void OnSaveClick(object sender, RoutedEventArgs e)
+    {
+        MessageBox.Show("按钮接通了(OnSaveClick)!");
     }
 }

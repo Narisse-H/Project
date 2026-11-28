@@ -1,12 +1,68 @@
-﻿<Window x:Class="MyWpfApp.MainWindow"
+﻿<Window x:Class="ProjectEditor.SubWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MyWpfApp"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="ProjectEditor"
+        Width="350"
+        Height="250"
+        MinWidth="300"
+        MinHeight="200"
+        WindowStartupLocation="CenterScreen">
+    <Grid x:Name="canvasRoot"
+          ShowGridLines="True">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!--Row 0-->
+            <RowDefinition Height="*"/>
+            <!--Row 1-->
+            <RowDefinition Height="Auto"/>
+            <!--Row 2-->
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0"
+                Background="#F3F3F3"
+                Padding="8,6">
+
+            <TextBlock Text="Deepseek API"
+                       FontSize="14"
+                       FontWeight="Bold"
+                       Margin="6"
+                       HorizontalAlignment="Center"/>
+
+        </Border>
+
+        <Border Grid.Row="1"
+                Padding="8,6">
+
+            <TextBox x:Name="apiKeyTextBox"
+                     Width="200"
+                     Height="30"
+                     FontSize="14"
+                     VerticalContentAlignment="Center"
+                     ToolTip="Enter your Deepseek API key here"/>
+
+        </Border>
+
+        <Border Grid.Row="2"
+                Background="#F3F3F3"
+                Padding="8,6">
+
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Center">
+
+                <Button Content="Save"
+                        Padding="12,4"
+                        Margin="6,6"
+                        Click="OnSaveClick"/>
+
+                <Button Content="Cancel"
+                        Padding="12,4"
+                        Margin="6,6"
+                        IsCancel="True"/>
+
+            </StackPanel>
+
+        </Border>
 
     </Grid>
 </Window>

@@ -97,6 +97,12 @@ public partial class MainWindow : Window
     private void OnSendClick(object sender, RoutedEventArgs e)
     {
         var input = InputBox.Text.Trim();
+        if (api_key == string.Empty)
+        {
+            var api_window = new SubWindow();
+            api_window.Owner = this;
+            api_window.ShowDialog();
+        }
         if (ChatContentText.Text == "")
         {
             ChatContentText.Text = string.Empty;
