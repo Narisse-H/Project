@@ -97,7 +97,7 @@ public partial class MainWindow : Window
     private void OnSendClick(object sender, RoutedEventArgs e)
     {
         var input = InputBox.Text.Trim();
-        if (ChatContentText.Text == "None")
+        if (ChatContentText.Text == "")
         {
             ChatContentText.Text = string.Empty;
         }

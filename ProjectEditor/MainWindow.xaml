@@ -108,7 +108,7 @@
         <!--Chat Area-->
         <Grid Grid.Row="1"
               Grid.Column="0"
-              ShowGridLines="True">
+              ShowGridLines="False">
 
             <!--Row/Column Definition-->
             <Grid.RowDefinitions>
@@ -123,7 +123,7 @@
                           Padding="8">
 
                 <TextBlock x:Name="ChatContentText"
-                           Text="None"
+                           Text=""
                            TextWrapping="Wrap"
                            Foreground="#666666"/>
 
@@ -147,6 +147,7 @@
                          BorderThickness="0"
                          VerticalScrollBarVisibility="Auto"
                          HorizontalScrollBarVisibility="Auto"
+                         Background="#F3F3F3"
                          SpellCheck.IsEnabled="False"/>
 
                 <Button x:Name="SendButton"
