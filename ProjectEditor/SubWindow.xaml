@@ -34,7 +34,7 @@
         <Border Grid.Row="1"
                 Padding="8,6">
 
-            <TextBox x:Name="apiKeyTextBox"
+            <TextBox x:Name="ApiKeyTextBox"
                      Width="200"
                      Height="30"
                      FontSize="14"

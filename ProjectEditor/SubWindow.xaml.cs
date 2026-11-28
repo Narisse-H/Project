@@ -21,8 +21,15 @@ public partial class SubWindow : Window
         InitializeComponent();
     }
 
+    public string output_api_key { get; private set; } = string.Empty;
     private void OnSaveClick(object sender, RoutedEventArgs e)
     {
-        MessageBox.Show("按钮接通了(OnSaveClick)!");
+        var api_key = ApiKeyTextBox.Text.Trim();
+        if (!string.IsNullOrEmpty(api_key))
+        {
+            output_api_key = api_key;
+            DialogResult = true;
+        }
+        //MessageBox.Show("按钮接通了(OnSaveClick)!");
     }
 }

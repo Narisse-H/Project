@@ -97,17 +97,20 @@ public partial class MainWindow : Window
     private void OnSendClick(object sender, RoutedEventArgs e)
     {
         var input = InputBox.Text.Trim();
-        if (api_key == string.Empty)
+        if (string.IsNullOrEmpty(api_key))
         {
             var api_window = new SubWindow();
             api_window.Owner = this;
-            api_window.ShowDialog();
+            if (api_window.ShowDialog() == true)
+            {
+                api_key = api_window.output_api_key;
+            }
         }
         if (ChatContentText.Text == "")
         {
             ChatContentText.Text = string.Empty;
         }
-        if (input.Length != 0)
+        if (!string.IsNullOrEmpty(input))
         {
             ChatContentText.Text += $"你：{input}{Environment.NewLine}";
             InputBox.Clear();
